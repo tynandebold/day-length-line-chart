@@ -1,0 +1,39 @@
+body {
+  background-color: #efefef;
+}
+
+body,
+.axis {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+svg {
+  overflow: visible;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.series-label,
+.season-label {
+  font-size: 0.75em;
+}
+
+.small-multiples {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+h4 {
+  width: 100%;
+}
+
+small {
+  display: block;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day Length Line Chart</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="//tynandebold.com/assets/dev/favicon.ico"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta
+      name="description"
+      content="A day-length data visualization by Tynan DeBold."
+    />
+    <meta
+      name="keywords"
+      content="tynan debold, tynandebold, tynan, debold, developer, interactive developer, data visualization, data viz, dataviz, front-end developer, software engineer, frontend engineer, photography, photographer, the wall street journal, wsj, msnbc, msnbc.com, nbc, media, journalism"
+    />
+    <script src="//d3js.org/d3.v4.js"></script>
+  </head>
+  <body>
+    <h4>Daylight hours per day</h4>
+    <div id="line-chart"></div>
+    <div class="small-multiples">
+      <h4>Percentage change in daylight hours compared with...</h4>
+      <div>
+        <h5>...one day ago.</h5>
+        <div id="day-ago"></div>
+      </div>
+      <div>
+        <h5>...one week ago.</h5>
+        <div id="week-ago"></div>
+      </div>
+      <div>
+        <h5>...one month ago.</h5>
+        <div id="month-ago"></div>
+      </div>
+    </div>
+    <small><a href="//tynandebold.com">tynandebold.com</a></small>
+  </body>
+  <script src="./main.js"></script>
+</html>
