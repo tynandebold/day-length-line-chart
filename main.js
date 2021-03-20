@@ -176,9 +176,9 @@
 
     seasonChanges
       .append('line')
-      .attr('x1', xAxis(parseTime('2021-03-20')) + 0.75)
+      .attr('x1', xAxis(parseTime('2021-03-19')) + 0.75)
       .attr('y1', 0)
-      .attr('x2', xAxis(parseTime('2021-03-20')) + 0.75)
+      .attr('x2', xAxis(parseTime('2021-03-19')) + 0.75)
       .attr('y2', height)
       .style('stroke-width', 0.5)
       .style('stroke', 'gray')
@@ -191,7 +191,7 @@
       .attr('transform', function () {
         return (
           'translate(' +
-          (xAxis(parseTime('2021-03-20')) + 5) +
+          (xAxis(parseTime('2021-03-19')) + 5) +
           ',' +
           (height - 50) +
           ')rotate(90)'
