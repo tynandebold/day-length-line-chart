@@ -102,24 +102,24 @@
         return line(d.values);
       });
 
-    lines
-      .selectAll('data-points')
-      .data(function (d) {
-        return d.values;
-      })
-      .enter()
-      .append('circle')
-      .attr('class', 'data-point')
-      .attr('r', 1.75)
-      .attr('fill', function (d) {
-        return colorScale(d.location);
-      })
-      .attr('cx', function (d) {
-        return xAxis(parseTime(d.date)) + 0;
-      })
-      .attr('cy', function (d) {
-        return yAxis(+d.dayLengthSeconds / 3600);
-      });
+    // lines
+    //   .selectAll('data-points')
+    //   .data(function (d) {
+    //     return d.values;
+    //   })
+    //   .enter()
+    //   .append('circle')
+    //   .attr('class', 'data-point')
+    //   .attr('r', 1.75)
+    //   .attr('fill', function (d) {
+    //     return colorScale(d.location);
+    //   })
+    //   .attr('cx', function (d) {
+    //     return xAxis(parseTime(d.date)) + 0;
+    //   })
+    //   .attr('cy', function (d) {
+    //     return yAxis(+d.dayLengthSeconds / 3600);
+    //   });
 
     lines
       .append('text')
