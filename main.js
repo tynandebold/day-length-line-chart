@@ -137,7 +137,8 @@
           'translate(' +
           xAxis(parseTime(latestDataPoint.date)) +
           ',' +
-          (i * 17 + 200) + // (yAxis(+latestDataPoint.dayLengthSeconds / 3600) + 3.5) +
+          // (i * 17 + 200) +
+          (yAxis(+latestDataPoint.dayLengthSeconds / 3600) + 3.5) +
           ')'
         );
       })
