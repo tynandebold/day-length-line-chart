@@ -17,7 +17,6 @@ function writeData() {
         `https://api.sunrise-sunset.org/json?lat=${coords[0]}&lng=${coords[1]}`
       );
       const dayLength = response.data.results.day_length;
-      console.log(dayLength);
       const dayLengthSecs = computeDayLengthSeconds(dayLength);
 
       dataPoints.push(`${today},"${location}",${dayLength},${dayLengthSecs}`);
