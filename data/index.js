@@ -3,7 +3,7 @@ const axios = require('axios');
 const { locations } = require('./locations');
 
 const today = new Date().toISOString().slice(0, 10);
-// const forgottenDate = '2021-05-23';
+// const forgottenDate = '2021-05-30';
 
 function writeData() {
   let dataPoints = [];
