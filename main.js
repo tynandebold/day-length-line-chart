@@ -150,59 +150,40 @@
         return colorScale(d.key);
       });
 
-    seasonChanges
-      .append('line')
-      .attr('x1', xAxis(parseTime('2020-12-21')) + 0.75)
-      .attr('y1', 0)
-      .attr('x2', xAxis(parseTime('2020-12-21')) + 0.75)
-      .attr('y2', height)
-      .style('stroke-width', 0.5)
-      .style('stroke', 'gray')
-      .style('fill', 'none');
-
-    seasonChanges
-      .append('text')
-      .style('text-anchor', 'end')
-      .attr('class', 'season-label')
-      .attr('transform', function () {
-        return (
-          'translate(' +
-          (xAxis(parseTime('2020-12-21')) + 5) +
-          ',' +
-          (height - 50) +
-          ')rotate(90)'
-        );
-      })
-      .text('Winter solstice');
-
-    seasonChanges
-      .append('line')
-      .attr('x1', xAxis(parseTime('2021-03-19')) + 0.75)
-      .attr('y1', 0)
-      .attr('x2', xAxis(parseTime('2021-03-19')) + 0.75)
-      .attr('y2', height)
-      .style('stroke-width', 0.5)
-      .style('stroke', 'gray')
-      .style('fill', 'none');
-
-    seasonChanges
-      .append('text')
-      .style('text-anchor', 'end')
-      .attr('class', 'season-label')
-      .attr('transform', function () {
-        return (
-          'translate(' +
-          (xAxis(parseTime('2021-03-19')) + 5) +
-          ',' +
-          (height - 50) +
-          ')rotate(90)'
-        );
-      })
-      .text('Spring equinox');
+    addVerticalLine('2020-12-21', 'Winter solstice');
+    addVerticalLine('2021-03-19', 'Spring equinox');
+    addVerticalLine('2021-06-21', 'Summer solstice');
 
     buildSmallMultiple(dayAgo, 1, series);
     buildSmallMultiple(weekAgo, 7, series);
     buildSmallMultiple(monthAgo, 30, series);
+
+    function addVerticalLine(date, text) {
+      seasonChanges
+        .append('line')
+        .attr('x1', xAxis(parseTime(date)) + 0.75)
+        .attr('y1', 0)
+        .attr('x2', xAxis(parseTime(date)) + 0.75)
+        .attr('y2', height)
+        .style('stroke-width', 0.5)
+        .style('stroke', 'gray')
+        .style('fill', 'none');
+
+      seasonChanges
+        .append('text')
+        .style('text-anchor', 'end')
+        .attr('class', 'season-label')
+        .attr('transform', function () {
+          return (
+            'translate(' +
+            (xAxis(parseTime(date)) + 5) +
+            ',' +
+            (height - 50) +
+            ')rotate(90)'
+          );
+        })
+        .text(text);
+    }
   });
 
   function buildSmallMultiple(svgRef, timeAgo, series) {
