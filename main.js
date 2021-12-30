@@ -102,25 +102,6 @@
         return line(d.values);
       });
 
-    // lines
-    //   .selectAll('data-points')
-    //   .data(function (d) {
-    //     return d.values;
-    //   })
-    //   .enter()
-    //   .append('circle')
-    //   .attr('class', 'data-point')
-    //   .attr('r', 1.75)
-    //   .attr('fill', function (d) {
-    //     return colorScale(d.location);
-    //   })
-    //   .attr('cx', function (d) {
-    //     return xAxis(parseTime(d.date)) + 0;
-    //   })
-    //   .attr('cy', function (d) {
-    //     return yAxis(+d.dayLengthSeconds / 3600);
-    //   });
-
     lines
       .append('text')
       .sort(function (a, b) {
@@ -153,6 +134,8 @@
     addVerticalLine('2020-12-21', 'Winter solstice');
     addVerticalLine('2021-03-19', 'Spring equinox');
     addVerticalLine('2021-06-21', 'Summer solstice');
+    addVerticalLine('2021-09-22', 'Fall equinox');
+    addVerticalLine('2021-12-21', 'Winter solstice');
 
     buildSmallMultiple(dayAgo, 1, series);
     buildSmallMultiple(weekAgo, 7, series);
@@ -161,9 +144,9 @@
     function addVerticalLine(date, text) {
       seasonChanges
         .append('line')
-        .attr('x1', xAxis(parseTime(date)) + 0.75)
+        .attr('x1', xAxis(parseTime(date)) + 0.5)
         .attr('y1', 0)
-        .attr('x2', xAxis(parseTime(date)) + 0.75)
+        .attr('x2', xAxis(parseTime(date)) + 0.5)
         .attr('y2', height)
         .style('stroke-width', 0.5)
         .style('stroke', 'gray')
